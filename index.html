@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Max sector 105, Noida</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Google Fonts: Premium Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#ab7f30',    /* VIBRANT RED */
+                        'brand-dark': '#111827',       /* Deep Charcoal/Black */
+                        'brand-accent': '#F9FAFB',     /* Crisp White/Gray Background */
+                        'brand-hover': '#c48d2b', 
+                        'sub-brand':'rgb(239 195 117)'  
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.5)), url('images/banner2.webp')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom CSS embedded here */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ab7f30;
+            border-radius: 4px;
+        }
+
+        ::selection {
+            background-color: #ab7f30;
+            color: white;
+        }
+
+        .text-boost-shadow {
+            text-shadow: 0 0 5px rgba(185, 141, 61, 0.5);
+        }
+
+        /* Gallery Grid Layout (Masonry-like) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 200px);
+            gap: 16px;
+        }
+
+        /* Masonry Layout Items */
+        .gallery-item-1 {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item-2 {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        .gallery-item-3 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .gallery-item-4 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .gallery-item-6 {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        /* Responsive adjustments for Gallery */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .gallery-item-1,
+            .gallery-item-2,
+            .gallery-item-3,
+            .gallery-item-4,
+            .gallery-item-6 {
+                grid-column: span 1;
+                grid-row: auto;
+                height: 300px;
+            }
+        }
+
+        /* Location Card Hover Effect */
+        .location-card:hover i {
+            transform: scale(1.2);
+            color: #ab7f30;
+        }
+
+        /* General Modal Animation */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .modal:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* Image Modal Specific Styles */
+        .image-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        /* ========= Mobile Sticky Bottom CTA ========= */
+.mobile-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 12px 12px;
+  z-index: 9999;
+  /* premium background */
+  background:#fff;
+  backdrop-filter: blur(12px);
+}
+
+/* buttons base */
+.mobile-cta .cta-btn {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+
+  padding: 12px 10px;
+  border-radius: 14px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+
+  transition: 0.25s ease;
+}
+
+/* Brochure button */
+.mobile-cta .cta-brochure {
+  background:rgb(1, 23, 82); 
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Enquire button */
+.mobile-cta .cta-enquire {
+  background: #f75910; /* yellow */
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* hover effect */
+.mobile-cta .cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* click effect */
+.mobile-cta .cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* show only on mobile */
+@media (min-width: 768px) {
+  .mobile-cta {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+    </style>
+
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="font-sans text-gray-700 antialiased bg-brand-accent">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- Logo Area (UPDATED to use an image) -->
+            <a href="#"
+                class="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-brand-primary rounded-lg">
+                <img class="h-11 md:h-20 w-auto rounded-lg" src="images/logo.jpg" alt="">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 font-medium text-sm tracking-wide uppercase text-gray-600">
+                <a href="#overview" class="hover:text-brand-primary transition">Overview</a>
+                <a href="#prices" class="hover:text-brand-primary transition">Plans</a>
+                <a href="#amenities" class="hover:text-brand-primary transition">Amenities</a>
+                <a href="#gallery" class="hover:text-brand-primary transition">Gallery</a>
+                <a href="#location" class="hover:text-brand-primary transition">Location</a>
+            </div>
+
+            <!-- Call Button and Mobile Toggle Container -->
+            <div class="flex items-center space-x-4">
+                <a onclick="openEnquireModal('Download Brochure')"
+                    class="bg-brand-primary text-white px-4 py-2 rounded-sm font-bold text-xs md:text-sm hover:bg-brand-hover transition duration-300 shadow-md uppercase tracking-wide flex items-center gap-2">
+                    <i class="fa-solid fa-phone md:hidden"></i>
+                    <span class="hidden md:inline">Contact Us</span>
+                    <span class="md:hidden">Call</span>
+                </a>
+
+                <!-- Mobile Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-brand-dark focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <a href="#overview" class="block py-4 px-6 hover:bg-gray-50 border-b">Overview</a>
+            <a href="#prices" class="block py-4 px-6 hover:bg-gray-50 border-b">Plans & Price</a>
+            <a href="#amenities" class="block py-4 px-6 hover:bg-gray-50 border-b">Amenities</a>
+            <a href="#gallery" class="block py-4 px-6 hover:bg-gray-50 border-b">Gallery</a>
+            <a href="#location" class="block py-4 px-6 hover:bg-gray-50">Location</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-hero-pattern bg-cover  bg-fixed min-h-[calc(100vh-80px)] flex items-center pt-10 pb-12"
+        id="home">
+        <div class="container mx-auto px-6 grid lg:grid-cols-1 gap-16 items-center">
+            <!-- Text Content -->
+            <div class="text-white space-y-8 animate-fade-in-up">
+                <div class="border-l-4 border-brand-primary pl-4">
+                    <p
+                        class="text-sub-brand font-bold uppercase tracking-widest text-md mb-2 drop-shadow-md text-boost-shadow">
+                       Luxury Living Amidst 70% Open Spaces at DTC Still Waters</p>
+                    <h1 class="text-3xl md:text-4xl font-serif font-bold leading-none mb-4 shadow-black">
+                                               DTC Still Waters –  <span class="text-3xl md:text-3xl">Spacious 3 & 4 BHK in Prime Location
+                        </span>
+                    </h1>
+                </div>
+                <p class="text-lg text-gray-100  max-w-xl">
+                   Located behind the Infosys Campus in Newtown, DTC Still Waters offers seamless access to Kolkata’s leading business and
+                   lifestyle hubs, along with excellent connectivity to Sector V, Rajarhat Crossing, the Airport,
+                   and the upcoming Metro, while Eco Park, City Centre 2, top schools, universities, 
+                   and premier hospitals are just minutes away.</p>
+                <!-- Offers Badge -->
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <div class="bg-white/10 backdrop-blur-sm border border-brand-primary/50 px-3 py-3 rounded-sm">
+                       5.1 acres | 70% open space
+
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm border border-brand-primary/50 px-3 py-3 rounded-sm">
+                        3 & 4 BHK in Prime Location
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button onclick="openEnquireModal('Starting ₹88 Lakh')"
+                        class="bg-brand-primary text-white px-8 py-3 rounded-sm font-bold hover:bg-brand-hover transition duration-300 w-full md:w-auto shadow-lg">
+                        Starting ₹88 Lakh
+                    </button>
+                    <button onclick="openEnquireModal('Book Free Site Visit')"
+                        class="border border-white text-white px-8 py-3 rounded-sm font-bold hover:bg-white hover:text-brand-dark transition duration-300 w-full md:w-auto">
+                        Book Free Site Visit
+                    </button>
+                </div>
+            </div>
+            <!-- Hero Lead Form 3 -->
+            <!-- <div
+                class="bg-white p-8 rounded shadow-2xl max-w-md ml-auto w-full relative border-t-4 border-brand-primary">
+                <h2 class="text-3xl font-serif font-bold text-brand-dark mb-1">Enquire Now</h2>
+                <p class="text-gray-500 mb-6 text-sm font-light">Register to avail exclusive launch offers.</p>
+
+                <form id="ajax-header-contact-3" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Name</label>
+                        <input type="text" name="name1" placeholder="Your Name" required
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Phone
+                            Number</label>
+                        <div class="flex">
+                            <span
+                                class="inline-flex items-center px-3 border border-r-0 border-gray-200 bg-gray-100 text-gray-500 text-sm rounded-l">+91</span>
+                            <input type="tel" name="phone" placeholder="Phone Number" required
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-r focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">City</label>
+                        <input type="text" name="City" placeholder="Your City" required
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-brand-dark text-white font-bold py-4 rounded hover:bg-brand-primary transition duration-300 uppercase tracking-widest text-sm shadow-lg transform hover:-translate-y-1">
+                        Get Instant Callback
+                    </button>
+                </form>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview" class="w-full bg-[#fbf7f2] py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- LEFT CONTENT -->
+      <div>
+        <div class="text-center mb-16 mt-6">
+                <span class="text-brand-primary font-bold uppercase tracking-widest text-xs ">About Us</span>
+                <h2 class="text-5xl font-serif font-bold text-brand-dark mt-2"> DTC Still Waters</h2>
+                <div class="w-24 h-1 bg-brand-primary mx-auto mt-6"></div>
+            </div>
+
+        <p class="mt-6 text-base md:text-md text-slate-600 leading-relaxed">
+         DTC Still Waters is a premium residential development offering luxury living amidst 70% open
+         spaces in the heart of Newtown, Kolkata. Spread across 5.1 acres, the project is thoughtfully
+        designed to provide expansive greenery, modern architecture, and a serene lifestyle away
+        from city congestion.
+        </p>
+        <p class="mt-5 text-base md:text-md text-slate-600 leading-relaxed">
+         Strategically located behind the Infosys Campus in Newtown, DTC Still Waters ensures seamless
+         connectivity to Kolkata’s leading business and lifestyle hubs. With easy access to Sector V, Rajarhat Crossing,
+        the Airport, and the upcoming Metro, residents enjoy excellent connectivity while staying close to Eco Park, City Centre 2,
+         reputed schools, universities, and premier hospitals.
+        </p>
+
+        <div class="mt-8">
+          <a  onclick="openEnquireModal('Download Brochure')"
+            class="inline-flex items-center gap-3 bg-[#0b2b4d] text-white px-7 py-3 rounded-md font-medium shadow hover:opacity-90 transition">
+            Book A Free Site Visit
+            <i class="fa-solid fa-file-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGES GRID -->
+      <div class="grid grid-cols-2 gap-5">
+        <!-- Top Left Image -->
+        <div class="col-span-1">
+          <div class="overflow-hidden rounded-lg shadow-md bg-white">
+            <img
+              src="images/img2.jpg"
+              alt="Project Image 1"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+        </div>
+        <!-- Right Big Image (spans 2 rows) -->
+        <div class="col-span-1 row-span-2">
+          <div class="overflow-hidden rounded-lg shadow-md bg-white h-full">
+            <img
+              src="images/img1.webp"
+              alt="Project Image 2"
+              class="w-full h-full object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+        </div>
+        <!-- Bottom Left Image -->
+        <div class="col-span-1">
+          <div class="overflow-hidden rounded-lg shadow-md bg-white">
+            <img
+              src="images/img5.webp"
+              alt="Project Image 3"
+              class="w-full h-48 md:h-56 object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+
+    
+    <!-- Plans & Prices -->
+    <section id="prices" class="pb-24 bg-brand-accent">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 mt-6">
+                <span class="text-brand-primary font-bold uppercase tracking-widest text-xs ">Plans & Pricing</span>
+                <h2 class="text-5xl font-serif font-bold text-brand-dark mt-2">Offerings & Sizes</h2>
+                <div class="w-24 h-1 bg-brand-primary mx-auto mt-6"></div>
+            </div>
+
+            <div class=" grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Plan 1 -->
+                <div
+                    class="group bg-white border border-gray-100 rounded-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-brand-primary transition-colors duration-300">
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-brand-dark mb-2"> 3 BHK Smart</h3>
+                    <p class="text-gray-700 text-md mb-6"> 1160 sq. Ft. </p>
+                    <div class="text-4xl font-serif font-bold text-brand-primary mb-8"> ₹ 88 lakhs onwards<span
+                            class="text-lg text-gray-400 font-normal">*</span></div>
+                    <button onclick="openEnquireModal('4 & 4.5 BHK Inquiry')"
+                        class="w-full bg-brand-dark text-white py-3 rounded hover:bg-brand-primary transition duration-300 font-bold uppercase text-xs tracking-widest">Enquire
+                        Now</button>
+                </div>
+
+                <!-- Plan 2 (Red on Black usage area) -->
+                <div
+                    class="group bg-brand-dark border border-brand-dark rounded-lg p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform scale-105 z-10 text-center relative">
+                    <h3 class="text-3xl font-serif font-bold text-white mb-2">3 BHK + 2 Toilets </h3>
+                    <p class="text-gray-300 text-md mb-6">1340 sq. ft & 1550 sq. ft</p>
+                    <div class="text-4xl font-serif font-bold text-brand-primary mb-8 text-boost-shadow">₹ 1 Cr onwards<span class="text-lg text-gray-400 font-normal">*</span></div>
+                    <button onclick="openEnquireModal('Sky Villas (Penthouses)')"
+                        class="w-full bg-brand-primary text-white py-3 rounded hover:bg-white hover:text-brand-dark transition duration-300 font-bold uppercase text-xs tracking-widest">Enquire
+                        Now</button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div
+                    class="group bg-white border border-gray-100 rounded-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-brand-primary transition-colors duration-300">
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-brand-dark mb-2">4 BHK</h3>
+                    <p class="text-gray-700 text-md mb-6">2030 sq. ft </p>
+                    <div class="text-4xl font-serif font-bold text-brand-primary mb-8">₹1.48 Cr onwards<span
+                            class="text-lg text-gray-400 font-normal">*</span></div>
+                    <button onclick="openEnquireModal('Duplex Townhouses')"
+                        class="w-full bg-brand-dark text-white py-3 rounded hover:bg-brand-primary transition duration-300 font-bold uppercase text-xs tracking-widest">Enquire
+                        Now</button>
+                </div> 
+                <!-- Plan 4 -->
+                <!-- <div
+                    class="  group bg-white border border-gray-100 rounded-lg p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gray-200 group-hover:bg-brand-primary transition-colors duration-300">
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-brand-dark mb-2">Duplexes</h3>
+                    <p class="text-gray-700 text-md mb-6">6,366 sq.ft</p>
+                    <div class="text-4xl font-serif font-bold text-brand-primary mb-8"> ₹ 17.5 Cr* onwards<span
+                            class="text-lg text-gray-400 font-normal">*</span></div>
+                    <button onclick="openEnquireModal('Duplexes')"
+                        class="w-full bg-brand-dark text-white py-3 rounded hover:bg-brand-primary transition duration-300 font-bold uppercase text-xs tracking-widest">Enquire
+                        Now</button>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities (Red on Black usage area) -->
+    <section id="amenities" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Decorative bg elements - Red Glow -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary opacity-20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary opacity-10 rounded-full blur-3xl"></div>
+
+        <div class="text-center mb-16">
+            <!-- Text Group: max-w-xl mx-auto ensures the block itself is centered -->
+            <div class="max-w-xl mx-auto">
+                <span
+                    class="text-brand-primary font-bold uppercase tracking-widest text-xs text-boost-shadow">Lifestyle</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-2">World-Class Amenities</h2>
+            </div>
+            <!-- Button now consistently centered below text -->
+            <button onclick="openEnquireModal('Download Amenities Brochure')"
+                class="mt-6 mx-auto border border-brand-primary text-brand-primary px-8 py-3 rounded hover:bg-brand-primary hover:text-white transition uppercase text-xs font-bold tracking-widest">
+                Download Amenities List
+            </button>
+        </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-800 border border-gray-800">
+  <!-- 1 -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-map text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">Spread across a 10.34-acre land parcel</h5>
+  </div>
+
+  <!-- 2 -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-tree text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">3.5 acres of landscaped green spaces</h5>
+  </div>
+
+  <!-- 3 -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-building-columns text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">Iconic 51,000 sq.ft Grand Clubhouse</h5>
+  </div>
+
+  <!-- 4 -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-dumbbell text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">21,000 sq.ft Sports club</h5>
+  </div>
+
+  <!-- 5 -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-spa text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">Dedicated zones for wellness, recreation, and leisure</h5>
+  </div>
+
+  <!-- 6 -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-person-running text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">Dedicated sky walk (elevated jogging track)</h5>
+  </div>
+
+  <!-- 7 -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-city text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">Premium infrastructure for modern urban living</h5>
+  </div>
+
+  <!-- 8 (extra card for balanced grid, optional) -->
+  <div
+    class="bg-brand-dark p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-800 transition duration-500 cursor-pointer">
+    <i
+      class="fa-solid fa-star text-4xl text-brand-primary text-boost-shadow mb-4 group-hover:scale-110 transition duration-300"></i>
+    <h5 class="text-md ">Iconic lifestyle amenities & premium planning</h5>
+  </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section - NOW CLICKABLE -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-primary font-bold uppercase tracking-widest text-xs">Visual Tour</span>
+                <h2 class="text-5xl font-serif font-bold text-brand-dark mt-2">The Gallery</h2>
+                <div class="w-24 h-1 bg-brand-primary mx-auto mt-6"></div>
+            </div>
+
+            <div class="gallery-grid">
+
+                <!-- Image 1:  -->
+                <div class="gallery-item-1 relative group overflow-hidden rounded-sm cursor-pointer"
+                    onclick="openImageModal(this)">
+                    <img src="images/gy2.webp" data-full-url="images/gy2.webp" alt="Club"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    </div>
+                </div>
+
+                <!-- Image 2:  -->
+                <div class="gallery-item-2 relative group overflow-hidden rounded-sm cursor-pointer"
+                    onclick="openImageModal(this)">
+                    <img src="images/gy3.webp" data-full-url="images/gy3.webp" alt="Modular Kitchen"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    </div>
+                </div>
+
+                <!-- Image 3: -->
+                <div class="gallery-item-3 relative group overflow-hidden rounded-sm cursor-pointer"
+                    onclick="openImageModal(this)">
+                    <img src="images/ab-img3.jpg" data-full-url="images/ab-img3.jpg" alt="Master Bedroom"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    </div>
+                </div>
+
+                <!-- Image 4: -->
+                <div class="gallery-item-4 relative group overflow-hidden rounded-sm cursor-pointer"
+                    onclick="openImageModal(this)">
+                    <img src="images/ab-img2.jpg" data-full-url="images/ab-img2.jpg" alt="Play Area"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <p class="text-white font-serif text-2xl font-bold">Modular Kitchen</p>
+                    </div>
+                </div>
+
+                <!-- Image 6:  -->
+                <div class="gallery-item-6 relative group overflow-hidden rounded-sm cursor-pointer"
+                    onclick="openImageModal(this)">
+                    <img src="images/gy4.webp" data-full-url="images/gy4.webp" alt="Balcony View"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    </div>
+                </div>
+
+                <!-- Image 7: -->
+                <div class="gallery-item-6 relative group overflow-hidden rounded-sm cursor-pointer"
+                    onclick="openImageModal(this)">
+                    <img src="images/ab-img3.jpg" data-full-url="images/ab-img3.jpg" alt="Living Area"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button onclick="openEnquireModal('View All Photos')"
+                    class="bg-transparent border border-brand-dark text-brand-dark px-10 py-3 rounded hover:bg-brand-dark hover:text-white transition duration-300 font-bold uppercase text-xs tracking-widest">
+                    View All Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Advantages -->
+    <section id="location" class="py-24 bg-brand-accent">
+  <div class="container mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16">
+      <!-- Text / List -->
+      <div>
+        <span class="text-brand-primary font-bold uppercase tracking-widest text-xs">Connectivity</span>
+        <h2 class="text-5xl font-serif font-bold text-brand-dark mt-2 mb-8">
+          Prime Location & Connectivity
+        </h2>
+
+        <p class="text-gray-600 mb-10 font-light">
+          MAX Sector 105, Noida offers a premium address with direct expressway access and seamless connectivity
+          to key business hubs, social infrastructure, and Central Icon — making it ideal for both lifestyle and investment.
+        </p>
+
+        <div class="space-y-6 relative">
+          <!-- Timeline Line -->
+          <div class="absolute left-[27px] top-6 bottom-6 w-0.5 bg-brand-primary/30"></div>
+
+          <!-- Item 1 -->
+          <div class="relative flex items-center location-card group cursor-pointer">
+            <div
+              class="w-14 h-14 rounded-full bg-white border-2 border-brand-primary flex items-center justify-center z-10 shadow-md group-hover:bg-brand-primary group-hover:text-white transition duration-300">
+              <i
+                class="fa-solid fa-location-dot text-brand-dark text-xl transition duration-300 group-hover:text-white"></i>
+            </div>
+            <div
+              class="ml-6 bg-white p-4 rounded-lg shadow-sm flex-1 border border-transparent group-hover:border-brand-primary/30 transition duration-300">
+              <h4 class="font-bold text-brand-dark">Prime Location – Sector 105, Noida</h4>
+              <p class="text-sm text-gray-500">
+                Premium sector offering high lifestyle value and strong investment demand.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="relative flex items-center location-card group cursor-pointer">
+            <div
+              class="w-14 h-14 rounded-full bg-white border-2 border-brand-primary flex items-center justify-center z-10 shadow-md group-hover:bg-brand-primary group-hover:text-white transition duration-300">
+              <i
+                class="fa-solid fa-route text-brand-dark text-xl transition duration-300 group-hover:text-white"></i>
+            </div>
+            <div
+              class="ml-6 bg-white p-4 rounded-lg shadow-sm flex-1 border border-transparent group-hover:border-brand-primary/30 transition duration-300">
+              <h4 class="font-bold text-brand-dark">Direct Expressway Connectivity</h4>
+              <p class="text-sm text-gray-500">
+                Strategically connected to Noida Expressway for smooth city-wide travel.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="relative flex items-center location-card group cursor-pointer">
+            <div
+              class="w-14 h-14 rounded-full bg-white border-2 border-brand-primary flex items-center justify-center z-10 shadow-md group-hover:bg-brand-primary group-hover:text-white transition duration-300">
+              <i
+                class="fa-solid fa-landmark text-brand-dark text-xl transition duration-300 group-hover:text-white"></i>
+            </div>
+            <div
+              class="ml-6 bg-white p-4 rounded-lg shadow-sm flex-1 border border-transparent group-hover:border-brand-primary/30 transition duration-300">
+              <h4 class="font-bold text-brand-dark">Seamless Access to Central Icon</h4>
+              <p class="text-sm text-gray-500">
+                Close to key landmarks and premium destinations in Noida.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="relative flex items-center location-card group cursor-pointer">
+            <div
+              class="w-14 h-14 rounded-full bg-white border-2 border-brand-primary flex items-center justify-center z-10 shadow-md group-hover:bg-brand-primary group-hover:text-white transition duration-300">
+              <i
+                class="fa-solid fa-briefcase text-brand-dark text-xl transition duration-300 group-hover:text-white"></i>
+            </div>
+            <div
+              class="ml-6 bg-white p-4 rounded-lg shadow-sm flex-1 border border-transparent group-hover:border-brand-primary/30 transition duration-300">
+              <h4 class="font-bold text-brand-dark">Near Business Hubs & Social Infrastructure</h4>
+              <p class="text-sm text-gray-500">
+                Easy access to corporate zones, premium facilities, and lifestyle essentials.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div
+        class="h-full min-h-[400px] bg-white p-2 rounded shadow-xl transform rotate-1 hover:rotate-0 transition duration-500">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7010.543568058858!2d77.36271154329587!3d28.531549502879894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce7c6b47fbf81%3A0xcf5666aa50fff760!2sMax%20Estates%20sector%20105%20Noida!5e0!3m2!1sen!2sin!4v1768634395755!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          class="rounded filter grayscale hover:grayscale-0 transition duration-500">
+        </iframe>
+      </div>
+    </div>
+  </div>
+   </section>
+
+
+    <!-- About Developer -->
+    <section class="py-24 bg-brand-accent" style="background-color: #fcf6ed">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-serif font-bold text-brand-dark mb-6">About the Developer – MAX Group</h2>
+            <p  class="text-gray-800 mb-10 ">
+                MAX Group is a trusted real estate brand known for delivering premium luxury
+                developments with strong investment potential. The developer has shown a
+                proven track record of price appreciation, making its projects highly desirable
+                in the Noida market. About 2 years ago, MAX launched a project in Sector 128,
+                Noida at ₹17,000/sq.ft, and today its resale value has reached ₹26,000/sq.ft,
+                clearly highlighting the brand’s consistent growth and demand. Continuing this legacy,
+                MAX Sector 105 is a high-end residential project spread across 10.34 acres with 
+                3.5 acres of landscaped green spaces, offering low-density living with only 4 apartments
+                per floor across 37 floors in 2 iconic towers. With world-class amenities, premium infrastructure,
+                and future-ready planning, MAX Sector 105 stands out as an elevated luxury address designed for
+                modern urban living and long-term appreciation.
+            </p>
+        </div>
+    </section>
+
+    <!-- mobile cta footer -->
+    <div class="mobile-cta d-block d-md-none" id="bottom-cta">
+        <button class="cta-btn cta-brochure"  onclick="openEnquireModal('Download Brochure')">
+            Download Brochure
+        </button>
+        <button class="cta-btn cta-enquire"  onclick="openEnquireModal('Enquiry Now')">
+            Enquire Now
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <!-- Adjusted from md:grid-cols-4 to md:grid-cols-3 -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 border-b border-gray-700 pb-12">
+
+                <!-- Project: left on mobile and md+ -->
+                <div class="order-1 md:order-1">
+                    <h5 class="text-lg font-serif font-bold mb-4 border-b-2 border-brand-primary pb-1 inline-block">
+                        Project</h5>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#overview" class="hover:text-white transition">Overview</a></li>
+                        <li><a href="#prices" class="hover:text-white transition">Plans & Pricing</a></li>
+                        <li><a href="#amenities" class="hover:text-white transition">Amenities</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact: right on mobile and middle on md+ -->
+                <div class="order-2 md:order-2">
+                <img class="h-11 md:h-20 w-auto rounded-lg" src="images/logo.png" alt="">
+                </div>
+
+                <!-- Disclaimer: full-width below on mobile, normal column on md+ -->
+                <div class="col-span-2 md:col-span-1 order-3 md:order-3">
+                    <h5 class="text-lg font-serif font-bold mb-4 border-b-2 border-brand-primary pb-1 inline-block">
+                        Disclaimer</h5>
+                    <p class="text-sm text-gray-400 font-light">
+                        Marketed By - Authorised Channel Partner | This is not the official website of developer
+                        property, it belongs to authorised channel partners for information purposes only. All rights
+                        for logo & images are reserved to the developer. Thank you for visiting our website. This
+                        disclaimer ("Disclaimer") is applicable to this website and all microsites and websites owned by
+                        us. By using or accessing this website you agree with the Disclaimer without any qualification
+                        or limitation.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center pt-8 text-sm text-gray-500">
+                <p>&copy; 2025 All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP MODAL (General Enquiry) -->
+    <div id="enquireModal"
+        class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-md relative overflow-hidden animate-fade-in-up">
+            <!-- Close Button -->
+            <button onclick="closeEnquireModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-brand-dark text-xl z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="bg-brand-dark p-6 text-center">
+                <h3 class="text-2xl font-serif font-bold text-white mb-1">Enquire Now</h3>
+                <p class="text-brand-primary text-sm uppercase tracking-wide text-boost-shadow">Get Price Sheet &
+                    Brochure</p>
+            </div>
+
+            <!-- Modal Form 2 -->
+            <div class="p-8">
+                <form id="ajax-header-contact-2" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Name</label>
+                        <input type="text" placeholder="Your Name" name="name1" required
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Phone
+                            Number</label>
+                        <div class="flex">
+                            <span
+                                class="inline-flex items-center px-3 border border-r-0 border-gray-200 bg-gray-100 text-gray-500 text-sm rounded-l">+91</span>
+                            <input type="tel" placeholder="Phone Number" name="phone" required
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-r focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">City</label>
+                        <input type="text" name="City" placeholder="Your City" required
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-brand-dark focus:ring-1 focus:ring-brand-dark transition">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-brand-primary text-white font-bold py-4 rounded hover:bg-brand-dark hover:text-white transition duration-300 uppercase tracking-widest text-sm">
+                        Submit Enquiry
+                    </button>
+                </form>
+                <p class="text-center text-xs text-gray-400 mt-4"><i class="fa-solid fa-lock mr-1"></i> Your details are
+                    safe with us.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGE MODAL (Click-to-Enlarge) -->
+    <div id="imageModal"
+        class="modal hidden fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+        onclick="closeImageModal()">
+        <div class="relative max-w-5xl w-full h-full flex items-center justify-center">
+            <!-- Close Button -->
+            <button
+                class="absolute top-4 right-4 text-white text-3xl font-bold p-2 bg-black/50 rounded-full hover:bg-black/80 transition duration-150 z-20"
+                aria-label="Close" onclick="closeImageModal()">
+                &times;
+            </button>
+
+            <!-- Modal Image Container -->
+            <img id="modalImageContent" src="#" alt="Enlarged Image"
+                class="image-modal-content rounded-xl shadow-2xl transition-all duration-300"
+                onclick="event.stopPropagation()">
+        </div>
+    </div>
+    <!-- NEW: Modal for Automatic Pop-up on Load -->
+    <div id="auto-popup-modal"
+        class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-dark/95 hidden"
+        onclick="closeAutoPopupModal(event)">
+        <div class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-lg relative border-t-4 border-brand-primary"
+            onclick="event.stopPropagation()">
+            <button
+                class="absolute top-4 right-4 text-gray-500 text-2xl hover:text-brand-primary transition focus:outline-none"
+                onclick="closeAutoPopupModal(event)">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-serif font-bold text-brand-dark mb-1">Max sector 105, Noida</h2>
+                <p class="text-brand-primary font-bold text-lg">Register to avail exclusive launch offers.</p>
+                <p class="text-gray-500 text-sm font-light mt-2">Don't miss the exclusive pre-launch benefits.</p>
+            </div>
+            <!-- form 1 -->
+            <form id="ajax-header-contact" class="space-y-4">
+         
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Name</label>
+                    <input type="text" name="name1" placeholder="Your Name" required
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Phone
+                        Number</label>
+                    <div class="flex">
+                        <span
+                            class="inline-flex items-center px-3 border border-r-0 border-gray-200 bg-gray-100 text-gray-500 text-sm rounded-l">+91</span>
+                        <input type="tel" name="phone" placeholder="Phone Number" required
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-r focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">City</label>
+                    <input type="text" name="City" placeholder="Your City" required
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition">
+                </div>
+                <button type="submit"
+                    class="w-full bg-brand-primary text-white font-bold py-4 rounded hover:bg-brand-hover transition duration-300 uppercase tracking-widest text-sm shadow-lg">
+                    Claim Exclusive Offer
+                </button>
+            </form>
+
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script>
+        // DOM Elements for Modals
+        const enquireModal = document.getElementById('enquireModal');
+        const sourceField = document.getElementById('sourceField');
+        const imageModal = document.getElementById('imageModal');
+        const modalImageContent = document.getElementById('modalImageContent');
+
+        // General Enquiry Modal Functions (renamed to avoid conflict)
+        function openEnquireModal(source = 'General Enquiry') {
+            enquireModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            sourceField.value = source;
+        }
+
+        function closeEnquireModal() {
+            enquireModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Image Click Modal Functions
+        function openImageModal(imageContainer) {
+            // Find the image element inside the clicked container
+            const imageElement = imageContainer.querySelector('img');
+            const fullUrl = imageElement.getAttribute('data-full-url');
+
+            modalImageContent.src = fullUrl;
+            imageModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeImageModal() {
+            imageModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            modalImageContent.src = ''; // Clear source
+        }
+
+        // Close any modal when clicking outside
+        enquireModal.addEventListener('click', (e) => {
+            if (e.target === enquireModal) {
+                closeEnquireModal();
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Form Submission Handler
+
+        // Keyboard Listener (Escape key closes any open modal)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!imageModal.classList.contains('hidden')) {
+                    closeImageModal();
+                } else if (!enquireModal.classList.contains('hidden')) {
+                    closeEnquireModal();
+                }
+            }
+        });
+
+    </script>
+    <!-- <script src="auto-popup-script.js"></script> -->
+    <script src="form.js"></script>
+</body>
+
+</html>
