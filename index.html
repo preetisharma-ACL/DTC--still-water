@@ -956,22 +956,10 @@
         <!-- Scripts -->
         <script>
         // DOM Elements for Modals
-        const enquireModal = document.getElementById('enquireModal');
-        const sourceField = document.getElementById('sourceField');
         const imageModal = document.getElementById('imageModal');
         const modalImageContent = document.getElementById('modalImageContent');
 
-        // General Enquiry Modal Functions (renamed to avoid conflict)
-        function openEnquireModal(source = 'General Enquiry') {
-            enquireModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            sourceField.value = source;
-        }
-
-        function closeEnquireModal() {
-            enquireModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+       
 
         // Image Click Modal Functions
         function openImageModal(imageContainer) {
@@ -990,12 +978,7 @@
             modalImageContent.src = ''; // Clear source
         }
 
-        // Close any modal when clicking outside
-        enquireModal.addEventListener('click', (e) => {
-            if (e.target === enquireModal) {
-                closeEnquireModal();
-            }
-        });
+     
 
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
